@@ -1,5 +1,7 @@
 {
     "values": [
-        
+        "lobby:teams/unselected",
+        "lobby:teams/attacker",
+        "lobby:teams/defender"
     ]
 }

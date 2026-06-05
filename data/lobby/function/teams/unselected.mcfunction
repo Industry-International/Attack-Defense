@@ -1,0 +1,1 @@
+team join unselected @a[team=!attacker,team=!defender,team=!spectator,team=!unselected]
