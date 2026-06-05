@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "description": "攻防战前置包",
+		"pack_format": 48,
+        "supported_formats": [48, 101],
+		"min_format": 48,
+        "max_format": [101, 1]
+    }
+}
