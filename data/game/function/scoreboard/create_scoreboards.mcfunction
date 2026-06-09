@@ -1,0 +1,2 @@
+scoreboard objectives add game_start_ctd dummy
+scoreboard objectives add game_state dummy

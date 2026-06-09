@@ -1,1 +1,0 @@
-team join attacker @s

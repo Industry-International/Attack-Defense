@@ -1,0 +1,28 @@
+{
+  "team.attacker.name": "攻陣",
+  "team.defender.name": "守陣",
+  "team.unselected.name": "未選者",
+  "team.spectator.name": "旁觀",
+
+  "team.attacker.prefix": "§c[攻陣] ",
+  "team.defender.prefix": "§9[守陣] ",
+  "team.unselected.prefix": "§7[未選者] ",
+  "team.spectator.prefix": "§8[旁觀] ",
+
+  "team.attacker.join": "汝入攻陣矣！",
+  "team.defender.join": "汝入守陣矣！",
+  "team.spectator.join": "汝從旁觀矣！",
+  "team.leave": "汝已離隊！",
+
+  "game.start.title": "戰局將啟！",
+  "game.start.subtitle": "諸君備戰！",
+  "game.profession.title": "爾乃%1$s也",
+
+  "profession.assault": "銳士",
+  "profession.scout": "斥候",
+  "profession.medic": "醫官",
+  "profession.support": "輜卒",
+
+  "scoreboard.game_start_ctd": "戰始倒數",
+  "scoreboard.game_state": "戰局之態"
+}

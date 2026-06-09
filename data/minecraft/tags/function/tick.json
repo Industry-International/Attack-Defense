@@ -1,5 +1,7 @@
 {
     "values": [
-        "lobby:teams/unselected"
+        "game:teams/join_unselected",
+        "game:teams/show_team_actionbar",
+        "game:game/press_start_button"
     ]
 }

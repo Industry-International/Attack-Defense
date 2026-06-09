@@ -1,0 +1,28 @@
+{
+  "team.attacker.name": "Attackerz",
+  "team.defender.name": "Defenderz",
+  "team.unselected.name": "No Teamz",
+  "team.spectator.name": "Watchin",
+
+  "team.attacker.prefix": "§c[Attackerz] ",
+  "team.defender.prefix": "§9[Defenderz] ",
+  "team.unselected.prefix": "§7[No Teamz] ",
+  "team.spectator.prefix": "§8[Watchin] ",
+
+  "team.attacker.join": "U iz now an Attacker! OMG!",
+  "team.defender.join": "U iz now a Defender! YAY!",
+  "team.spectator.join": "U iz watchin nao!",
+  "team.leave": "U leev teh team!",
+
+  "game.start.title": "GAME IZ STARTIN! OMG!",
+  "game.start.subtitle": "Get reddy plz!",
+  "game.profession.title": "U iz %1$s",
+
+  "profession.assault": "Fighty Kitteh",
+  "profession.scout": "Sneaky Kitteh",
+  "profession.medic": "Healy Kitteh",
+  "profession.support": "Helpy Kitteh",
+
+  "scoreboard.game_start_ctd": "Teh Cooldown Befor Smashin",
+  "scoreboard.game_state": "Teh Statz"
+}
