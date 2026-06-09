@@ -1,0 +1,1 @@
+team join spectator @s
