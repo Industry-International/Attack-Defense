@@ -1,0 +1,95 @@
+# ============================================================
+# Attack-Defense（攻防战前置数据包）发版打包工作流
+# ============================================================
+# 触发时机：GitHub Release 正式发布时（仅一次）
+#
+# 功能：
+#   将数据包核心文件打包为 Attack-Defense-<tag>.zip
+#   自动上传到当前 Release 的附件
+# ============================================================
+
+name: Attack-Defense 发版打包
+
+on:
+  # 仅在 Release 正式发布时触发一次（draft/edit 不会触发）
+  release:
+    types: [published]
+
+# ============================================================
+# 配置区 ⬇️ 在此修改打包名称
+# ============================================================
+env:
+  PACKAGE_NAME: "Attack-Defense-${{ github.event.release.tag_name }}"
+
+jobs:
+  # ============================================================
+  # Job: 数据包打包并上传
+  # ============================================================
+  package-and-upload:
+    name: 打包数据包并上传到 Release
+    runs-on: ubuntu-latest
+    # 必须显式声明写入权限，否则 GITHUB_TOKEN 无法上传 Release 附件
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 创建打包暂存目录
+        run: mkdir -p build
+
+      # ===== 复制 pack.mcmeta（数据包元数据，必需） =====
+      - name: 复制数据包元数据
+        run: |
+          if [ -f "pack.mcmeta" ]; then
+            echo "添加 pack.mcmeta"
+            cp pack.mcmeta build/pack.mcmeta
+          else
+            echo "错误: pack.mcmeta 不存在！"
+            exit 1
+          fi
+
+      # ===== 复制 data 目录（函数核心逻辑，必需） =====
+      - name: 复制 data 目录
+        run: |
+          if [ -d "data" ]; then
+            echo "添加 data/ 目录"
+            cp -r data build/data
+          else
+            echo "错误: data/ 目录不存在！"
+            exit 1
+          fi
+
+      # ===== 复制 pack.png（数据包图标，可选） =====
+      - name: 复制数据包图标（如果存在）
+        run: |
+          if [ -f "pack.png" ]; then
+            echo "添加 pack.png"
+            cp pack.png build/pack.png
+          else
+            echo "pack.png 不存在，跳过"
+          fi
+
+      # ===== 生成版本信息 =====
+      - name: 生成版本信息
+        run: |
+          echo "version=${{ github.event.release.tag_name || github.ref_name }}" > build/version.txt
+          echo "date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> build/version.txt
+          echo "commit=${{ github.sha }}" >> build/version.txt
+          echo "已生成 build/version.txt"
+
+      # ===== 压缩打包 =====
+      - name: 压缩为 ZIP
+        run: |
+          cd build
+          zip -r "../${{ env.PACKAGE_NAME }}.zip" ./*
+          cd ..
+          echo "压缩完成: ${{ env.PACKAGE_NAME }}.zip"
+          echo "大小: $(du -h ${{ env.PACKAGE_NAME }}.zip | cut -f1)"
+
+      # ===== 上传到 Release =====
+      - name: 上传数据包到 Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.PACKAGE_NAME }}.zip
