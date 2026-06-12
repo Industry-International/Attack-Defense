@@ -1,7 +1,5 @@
 {
     "values": [
-        "game:teams/load_team_settings",
-        "game:scoreboard/create_scoreboards",
-        "game:scoreboard/load_scoreboard_settings"
+        "game:load"
     ]
 }

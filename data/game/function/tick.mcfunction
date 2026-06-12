@@ -1,0 +1,4 @@
+function game:teams/join_unselected
+function game:game/press_start_button
+function game:redeploy/detect_redeploy_button
+function game:redeploy/redeploy_tick
