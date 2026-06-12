@@ -1,4 +1,3 @@
-function game:load
 function game:teams/join_unselected
 function game:scoreboard/create_scoreboards
 function game:scoreboard/load_scoreboard_settings
