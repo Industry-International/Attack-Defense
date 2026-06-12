@@ -2,6 +2,7 @@
     "values": [
         "game:teams/join_unselected",
         "game:game/press_start_button",
+        "game:game/start_button_l",
         "game:redeploy/detect_redeploy_button",
         "game:redeploy/redeploy_tick",
         "game:interation/redeploy",

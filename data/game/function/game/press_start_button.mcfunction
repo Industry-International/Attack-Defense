@@ -1,2 +1,2 @@
-execute as @e[type=interaction,tag=start_button] at @s on target run function game:game/start_button_l
+execute as @e[type=interaction,tag=start_button] at @s on target run function game:scoreboard/game_start_ctd
 execute as @e[type=interaction,tag=start_button] if data entity @s interaction run data remove entity @s interaction
