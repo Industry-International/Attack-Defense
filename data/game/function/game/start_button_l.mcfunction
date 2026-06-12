@@ -1,3 +1,4 @@
+function game:scoreboard/game_start_ctd
 execute if score CTD game_start_ctd = 20 game_start_ctd run function game:sounds/exp_orb_pickup
 execute if score CTD game_start_ctd = 20 game_start_ctd run title @a title {"translate":"game.start.title","color":"red","bold":true}
 execute if score CTD game_start_ctd = 20 game_start_ctd run title @a subtitle {"translate":"game.start.subtitle","color":"gray","italic":true,"bold":true}
