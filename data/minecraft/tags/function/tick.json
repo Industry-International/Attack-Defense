@@ -2,6 +2,8 @@
     "values": [
         "game:teams/join_unselected",
         "game:teams/show_team_actionbar",
-        "game:game/press_start_button"
+        "game:game/press_start_button",
+        "game:redeploy/detect_redeploy_button",
+        "game:redeploy/redeploy_tick"
     ]
 }
