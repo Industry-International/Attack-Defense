@@ -1,1 +1,1 @@
-execute unless score CTD game_start_ctd matches -1 run scoreboard players set CTD game_start_ctd 140
+execute if score CTD game_start_ctd matches 1..140 run scoreboard players remove CTD game_start_ctd 1
