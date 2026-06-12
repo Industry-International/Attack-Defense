@@ -5,3 +5,4 @@ function game:redeploy/redeploy_tick
 function game:game/start_button_l
 function game:interation/redeploy
 function game:interation/start
+function game:scoreboard/game_start_ctd
