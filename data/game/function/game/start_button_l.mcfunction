@@ -20,5 +20,6 @@ execute if score CTD game_start_ctd matches 20 run execute as @a[team=spectator]
 execute if score CTD game_start_ctd matches 20 run function game:sounds/levelup
 execute if score CTD game_start_ctd matches 20 run title @a title {"translate":"game.choose_profession.title","color":"gold","bold":true}
 execute if score CTD game_start_ctd matches 20 run title @a subtitle {"translate":"game.choose_profession.subtitle","color":"yellow","italic":true,"bold":true}
+execute if score CTD game_start_ctd matches 20 run clear @a[team=!spectator,team=!unselected]
 execute if score CTD game_start_ctd matches 20 run give @a[team=!spectator,team=!unselected] kubejs:profession_selector
 execute if score CTD game_start_ctd matches 0..20 run scoreboard players reset CTD game_start_ctd
