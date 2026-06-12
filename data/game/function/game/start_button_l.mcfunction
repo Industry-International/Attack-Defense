@@ -1,4 +1,4 @@
-scoreboard players remove CTD game_start_ctd 1
+execute if score CTD game_start_ctd matches 1.. run scoreboard players remove CTD game_start_ctd 1
 execute if score CTD game_start_ctd = 140 game_start_ctd run function game:sounds/exp_orb_pickup
 execute if score CTD game_start_ctd = 140 game_start_ctd run title @a title {"translate":"game.start.title","color":"red","bold":true}
 execute if score CTD game_start_ctd = 140 game_start_ctd run title @a subtitle {"translate":"game.start.subtitle","color":"gray","italic":true,"bold":true}
