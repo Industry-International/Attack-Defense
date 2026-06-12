@@ -1,2 +1,2 @@
-execute as @e[type=interaction,tag=start_button] at @s on target if score state game_state matches 0 run scoreboard players set CTD game_start_ctd 140
+execute as @e[type=interaction,tag=start_button] at @s on target if score state game_state matches 0 if score CTD game_start_ctd matches 0 run scoreboard players set CTD game_start_ctd 140
 execute as @e[type=interaction,tag=start_button] if data entity @s interaction run data remove entity @s interaction
