@@ -8,14 +8,12 @@ execute if score CTD game_start_ctd = 80 game_start_ctd run title @a title {"tex
 execute if score CTD game_start_ctd = 100 game_start_ctd run title @a title {"text":"2","color":"gold","bold":true}
 execute if score CTD game_start_ctd = 120 game_start_ctd run title @a title {"text":"1","color":"gold","bold":true}
 execute if score CTD game_start_ctd = 140 game_start_ctd run scoreboard players set state game_state 1
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[team=attacker] at @s run tp @s 0 0 0
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[team=defender] at @s run tp @s 0 0 0
+execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[team=attacker] at @s run tp @s -1481.33 200.00 1874.86
+spawnpoint @a[team=attacker] -1481 200 1874
+execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[team=defender] at @s run tp @s -1485.70 199.00 1911.36
+spawnpoint @a[team=defender] -1485 200 1911
+execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[team=spectator] at @s run tp @s -229.47 106.00 -32.37
 execute if score CTD game_start_ctd = 140 game_start_ctd at @a run function game:sounds/levelup
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=assault] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=assault] run title @s subtitle {"translate":"profession.assault","color":"red"}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=scout] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=scout] run title @s subtitle {"translate":"profession.scout","color":"aqua"}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=medic] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=medic] run title @s subtitle {"translate":"profession.medic","color":"green"}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=support] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
-execute if score CTD game_start_ctd = 140 game_start_ctd run execute as @a[tag=support] run title @s subtitle {"translate":"profession.support","color":"gold"}
+execute if score CTD game_start_ctd = 140 game_start_ctd run title @a title {"translate":"game.choose_profession.title","color":"gold","bold":true}
+execute if score CTD game_start_ctd = 140 game_start_ctd run title @a subtitle {"translate":"game.choose_profession.subtitle","color":"yellow","italic":true,"bold":true}
+execute if score CTD game_start_ctd = 140 game_start_ctd run give @a[team=!spectator,team=!unselected] kubejs:profession_selector
