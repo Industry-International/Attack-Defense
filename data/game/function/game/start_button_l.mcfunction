@@ -23,4 +23,4 @@ execute if score CTD game_start_ctd matches 20 run title @a subtitle {"translate
 execute if score CTD game_start_ctd matches 20 run clear @a[team=!spectator,team=!unselected]
 execute if score CTD game_start_ctd matches 20 run kubejsadmin profession @a[team=!spectator,team=!unselected]
 execute if score CTD game_start_ctd matches 20 run give @a[team=!spectator,team=!unselected] kubejs:profession_selector
-execute if score CTD game_start_ctd matches 0..20 run scoreboard players reset CTD game_start_ctd
+execute if score CTD game_start_ctd matches 20 run scoreboard players reset CTD game_start_ctd
