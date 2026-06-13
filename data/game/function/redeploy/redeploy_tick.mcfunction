@@ -5,6 +5,7 @@ execute as @a[scores={redeploy_ctd=40}] at @s run title @s title {"text":"2","co
 execute as @a[scores={redeploy_ctd=20}] at @s run title @s title {"text":"1","color":"gold","bold":true}
 execute as @a[scores={redeploy_ctd=0},team=attacker] at @s run tp @s -265.43 109.00 -30.04
 execute as @a[scores={redeploy_ctd=0},team=defender] at @s run tp @s -633.99 114.00 -24.56
+execute as @a[scores={redeploy_ctd=0}] at @s run tag @s add yes_start_1
 execute as @a[scores={redeploy_ctd=0},tag=assault] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
 execute as @a[scores={redeploy_ctd=0},tag=assault] run title @s subtitle {"translate":"profession.assault","color":"red"}
 execute as @a[scores={redeploy_ctd=0},tag=scout] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
