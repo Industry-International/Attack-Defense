@@ -1,1 +1,1 @@
-playsound minecraft:entity.villager.no master @s ~ ~ ~ 0.5 1
+playsound minecraft:entity.villager.no master @a ~ ~ ~ 0.5 1

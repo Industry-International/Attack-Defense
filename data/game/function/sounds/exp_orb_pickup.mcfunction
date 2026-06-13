@@ -1,1 +1,1 @@
-playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 0.5 1
+playsound minecraft:entity.experience_orb.pickup master @a ~ ~ ~ 0.5 1
