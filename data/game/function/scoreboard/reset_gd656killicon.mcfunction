@@ -1,4 +1,4 @@
-gd656killicon server statistics dataset assist
-gd656killicon server statistics dataset death
-gd656killicon server statistics dataset kill
-gd656killicon server statistics dataset score
+gd656killicon server statistics dataset assist 0
+gd656killicon server statistics dataset death 0
+gd656killicon server statistics dataset kill 0
+gd656killicon server statistics dataset score 0

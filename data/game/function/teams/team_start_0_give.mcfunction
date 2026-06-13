@@ -1,0 +1,3 @@
+    execute if score state game_state matches 0 as @a unless items entity @s hotbar.0 kubejs:team_selector run item replace entity @s hotbar.0 with kubejs:team_selector
+    execute if score state game_state matches 1 as @a[team=unselected] unless items entity @s hotbar.0 kubejs:team_selector run item replace entity @s hotbar.0 with kubejs:team_selector
+    kill @e[type=item,nbt={Item:{id:"kubejs:team_selector"}}]

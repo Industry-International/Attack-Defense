@@ -6,3 +6,4 @@ function game:game/start_button_l
 function game:interaction/redeploy
 function game:interaction/start
 function game:scoreboard/game_start_ctd
+function game:teams/team_start_0_give
