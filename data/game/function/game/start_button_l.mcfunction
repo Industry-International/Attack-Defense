@@ -17,10 +17,10 @@ execute if score CTD game_start_ctd matches 20 run spawnpoint @a[team=attacker] 
 execute if score CTD game_start_ctd matches 20 run execute as @a[team=defender] at @s run tp @s -1485.70 199.00 1911.36
 execute if score CTD game_start_ctd matches 20 run spawnpoint @a[team=defender] -1485 200 1911
 execute if score CTD game_start_ctd matches 20 run execute as @a[team=spectator] at @s run tp @s -229.47 106.00 -32.37
-execute if score CTD game_start_ctd matches 20 as @a at @s run function game:sounds/levelup
-execute if score CTD game_start_ctd matches 20 run title @a title {"translate":"game.choose_profession.title","color":"gold","bold":true}
-execute if score CTD game_start_ctd matches 20 run title @a subtitle {"translate":"game.choose_profession.subtitle","color":"yellow","italic":true,"bold":true}
+execute if score CTD game_start_ctd matches 20 as @a[team=!unselected] at @s run function game:sounds/levelup
+execute if score CTD game_start_ctd matches 20 run title @a[team=!unselected] title {"translate":"game.choose_profession.title","color":"gold","bold":true}
+execute if score CTD game_start_ctd matches 20 run title @a[team=!unselected] subtitle {"translate":"game.choose_profession.subtitle","color":"yellow","italic":true,"bold":true}
 execute if score CTD game_start_ctd matches 20 run clear @a[team=!spectator,team=!unselected]
 execute if score CTD game_start_ctd matches 20 run kubejsadmin profession @a[team=!spectator,team=!unselected]
 execute if score CTD game_start_ctd matches 20 run give @a[team=!spectator,team=!unselected] kubejs:profession_selector
-execute if score CTD game_start_ctd matches ..21 run scoreboard players reset CTD game_start_ctd
+execute if score CTD game_start_ctd matches ..20 run scoreboard players reset CTD game_start_ctd
