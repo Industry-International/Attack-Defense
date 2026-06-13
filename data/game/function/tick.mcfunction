@@ -7,3 +7,5 @@ function game:interaction/redeploy
 function game:interaction/start
 function game:scoreboard/game_start_ctd
 function game:teams/team_start_0_give
+spawnpoint @a[team=defender] -1485 200 1911
+spawnpoint @a[team=attacker] -1481 200 1874
