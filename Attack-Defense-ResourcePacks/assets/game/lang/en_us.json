@@ -1,0 +1,32 @@
+{
+  "team.attacker.name": "Attackers",
+  "team.defender.name": "Defenders",
+  "team.unselected.name": "Unselected",
+  "team.spectator.name": "Spectators",
+
+  "team.attacker.prefix": "§c[Attacker] ",
+  "team.defender.prefix": "§9[Defender] ",
+  "team.unselected.prefix": "§7[Unselected] ",
+  "team.spectator.prefix": "§8[Spectator] ",
+
+  "team.attacker.join": "You have joined the attackers!",
+  "team.defender.join": "You have joined the defenders!",
+  "team.spectator.join": "You have joined the spectators!",
+  "team.leave": "You have left the team!",
+
+  "game.start.title": "Game starting soon!",
+  "game.start.subtitle": "Get ready!",
+  "game.profession.title": "You are %1$s",
+
+  "profession.assault": "Assault",
+  "profession.scout": "Scout",
+  "profession.medic": "Medic",
+  "profession.support": "Support",
+
+  "game.choose_profession.title": "Choose your profession",
+  "game.choose_profession.subtitle": "Profession selector given to you",
+
+  "scoreboard.game_start_ctd": "Game Start Countdown",
+  "scoreboard.game_state": "Game State",
+  "scoreboard.redeploy_ctd": "Redeploy Countdown"
+}

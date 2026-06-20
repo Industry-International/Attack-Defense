@@ -1,0 +1,1 @@
+tellraw @a[team=!unselected] {"translate":"capture.B.Occupied","color":"red"}

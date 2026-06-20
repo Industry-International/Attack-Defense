@@ -20,6 +20,7 @@ on:
 # ============================================================
 env:
   PACKAGE_NAME: "Attack-Defense-${{ github.event.release.tag_name }}"
+  ResourcePacks-PACKAGE_NAME: "Attack-Defense-ResourcePacks-${{ github.event.release.tag_name }}"
 
 jobs:
   # ============================================================
@@ -42,9 +43,9 @@ jobs:
       # ===== 复制 pack.mcmeta（数据包元数据，必需） =====
       - name: 复制数据包元数据
         run: |
-          if [ -f "pack.mcmeta" ]; then
+          if [ -f "Attack-Defense-ResourcePacks/pack.mcmeta" ]; then
             echo "添加 pack.mcmeta"
-            cp pack.mcmeta build/pack.mcmeta
+            cp Attack-Defense-ResourcePacks/pack.mcmeta build/pack.mcmeta
           else
             echo "错误: pack.mcmeta 不存在！"
             exit 1
@@ -93,3 +94,79 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.PACKAGE_NAME }}.zip
+
+  package-and-upload-resourcepack:
+    name: 打包多语言资源包并上传
+    runs-on: ubuntu-latest
+    # 必须显式声明写入权限，否则 GITHUB_TOKEN 无法上传 Release 附件
+    permissions:
+      contents: write
+
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 创建打包暂存目录
+        run: mkdir -p build
+
+      # ===== 复制核心资源包文件 =====
+      - name: 复制 pack.mcmeta
+        run: cp Attack-Defense-ResourcePacks/pack.mcmeta build/pack.mcmeta
+
+      - name: 复制 assets 目录
+        run: |
+          if [ -d "Attack-Defense-ResourcePacks/assets" ]; then
+            echo "添加文件夹: assets"
+            cp -r "Attack-Defense-ResourcePacks/assets" "build/assets"
+          else
+            echo "文件夹不存在，跳过: assets"
+            exit 1
+          fi
+
+      # ===== 复制白名单根目录文件 =====
+      - name: 复制白名单根目录文件
+        run: |
+          # ⭐ 在此添加需要打包的根目录文件（用空格分隔）
+          FILES="README.txt LICENSE 更新日志.md"
+          for file in $FILES; do
+            if [ -f "$file" ]; then
+              echo "添加文件: $file"
+              cp "$file" "build/$file"
+            fi
+          done
+
+      # ===== 生成版本信息 =====
+      - name: 生成版本信息
+        run: |
+          echo "version=${{ github.event.release.tag_name || github.ref_name }}" > build/version.txt
+          echo "date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> build/version.txt
+          echo "commit=${{ github.sha }}" >> build/version.txt
+          echo "已生成 build/version.txt"
+
+      # ===== 压缩打包 =====
+      # 打包后 ZIP 可直接作为 Minecraft 资源包使用
+      - name: 压缩为 ZIP
+        run: |
+          cd build
+          zip -r "../${{ env.PACKAGE_NAME }}.zip" ./*
+          cd ..
+          echo "压缩完成: ${{ env.PACKAGE_NAME }}.zip"
+          echo "大小: $(du -h ${{ env.PACKAGE_NAME }}.zip | cut -f1)"
+
+      - name: 压缩为 ZIP（latest）
+        run: |
+          cd build
+          zip -r "../Attack-Defense-ResourcePacks-latest.zip" ./*
+          cd ..
+          echo "压缩完成: Attack-Defense-ResourcePacks-latest.zip"
+          echo "大小: $(du -h Attack-Defense-ResourcePacks-latest.zip | cut -f1)"
+
+      # ===== 上传到 Release =====
+      - name: 上传资源包到 Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.PACKAGE_NAME }}.zip
+      - name: 上传 latest.zip 到 Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Attack-Defense-ResourcePacks-latest.zip

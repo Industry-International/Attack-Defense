@@ -1,0 +1,18 @@
+{
+  "pack": {
+    "pack_format": 34,
+    "description": "§6攻防战前置数据包 - 多语言资源包\n§7提供中文/English/LOLCAT/文言文翻译"
+  },
+  "language": {
+    "lolcat": {
+      "name": "LOLCAT (Kingdom of Cats)",
+      "region": "KC",
+      "bidirectional": false
+    },
+    "lzh": {
+      "name": "文言文",
+      "region": "CN",
+      "bidirectional": false
+    }
+  }
+}
