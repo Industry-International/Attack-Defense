@@ -148,10 +148,10 @@ jobs:
       - name: 压缩为 ZIP
         run: |
           cd build
-          zip -r "../${{ env.PACKAGE_NAME }}.zip" ./*
+          zip -r "../${{ env.ResourcePacks-PACKAGE_NAME }}.zip" ./*
           cd ..
-          echo "压缩完成: ${{ env.PACKAGE_NAME }}.zip"
-          echo "大小: $(du -h ${{ env.PACKAGE_NAME }}.zip | cut -f1)"
+          echo "压缩完成: ${{ env.ResourcePacks-PACKAGE_NAME }}.zip"
+          echo "大小: $(du -h ${{ env.ResourcePacks-PACKAGE_NAME }}.zip | cut -f1)"
 
       - name: 压缩为 ZIP（latest）
         run: |
@@ -165,7 +165,7 @@ jobs:
       - name: 上传资源包到 Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.PACKAGE_NAME }}.zip
+          files: ${{ env.ResourcePacks-PACKAGE_NAME }}.zip
       - name: 上传 latest.zip 到 Release
         uses: softprops/action-gh-release@v2
         with:
