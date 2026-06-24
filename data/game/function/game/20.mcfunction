@@ -9,5 +9,10 @@ title @a[team=!unselected] title {"translate":"game.choose_profession.title","co
 title @a[team=!unselected] subtitle {"translate":"game.choose_profession.subtitle","color":"yellow","italic":true,"bold":true}
 clear @a[team=!spectator,team=!unselected]
 kubejsadmin profession @a
+module team on
+module team_revive on
+team_revive reset
+sbw_vehicle reset
+sbw_vehicle start
 give @a[team=!spectator,team=!unselected] kubejs:profession_selector
 scoreboard players reset CTD game_start_ctd
