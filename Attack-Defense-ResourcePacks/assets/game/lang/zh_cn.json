@@ -32,5 +32,11 @@
   "capture.A.Occupied": "A点被占领",
   "capture.B.Occupied": "B点被占领",
   "capture.C.Occupied": "C点被占领",
-  "scoreboard.temp": "临时计分板"
+  "scoreboard.temp": "临时计分板",
+
+  "game.attacker.victory.title": "§c§l进攻方胜利！",
+  "game.attacker.victory.subtitle": "§6进攻方成功占领了所有目标点",
+  "game.defender.victory.title": "§9§l防守方胜利！",
+  "game.defender.victory.subtitle": "§6防守方成功抵御了进攻方的攻势"
+
 }
