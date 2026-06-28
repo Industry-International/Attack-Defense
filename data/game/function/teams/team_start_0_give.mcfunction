@@ -10,5 +10,6 @@ execute if score state game_state matches 1 as @a[team=!unselected,team=!spectat
 kill @e[type=item,nbt={Item:{id:"kubejs:profession_selector"}}]
 
 # 锁 kubejs:spawn_selector 
-clear @a[tag=yes_start_1] kubejs:spawn_selector
+clear @a kubejs:spawn_selector
+execute if score state game_state matches 1 as @a[team=!unselected,team=!spectator,tag=!yes_start_1] run item replace entity @s hotbar.4 with kubejs:spawn_selector
 kill @e[type=item,nbt={Item:{id:"kubejs:spawn_selector"}}]
