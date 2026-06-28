@@ -1,1 +1,2 @@
+spawn_selector invisible A1
 spawn_selector visible A1 attacker
