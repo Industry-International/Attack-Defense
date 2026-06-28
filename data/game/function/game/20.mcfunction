@@ -12,7 +12,7 @@ kubejsadmin profession @a
 module team on
 module team_revive on
 team_revive reset
-sbw_vehicle reset
+sbw_vehicle redeploy
 sbw_vehicle start
 spawn_selector visible attacker attacker
 spawn_selector visible defender defender
