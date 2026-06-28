@@ -1,0 +1,1 @@
+spawn_selector visible C2 attacker

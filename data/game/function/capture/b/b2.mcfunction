@@ -1,0 +1,1 @@
+spawn_selector visible B2 attacker

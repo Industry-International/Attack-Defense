@@ -14,4 +14,5 @@ execute as @a[scores={redeploy_ctd=0},tag=medic] run title @s title {"translate"
 execute as @a[scores={redeploy_ctd=0},tag=medic] run title @s subtitle {"translate":"profession.medic","color":"green"}
 execute as @a[scores={redeploy_ctd=0},tag=support] run title @s title {"translate":"game.profession.title","with":[{"selector":"@s"}]}
 execute as @a[scores={redeploy_ctd=0},tag=support] run title @s subtitle {"translate":"profession.support","color":"gold"}
+execute as @a[scores={redeploy_ctd=0}] run profequip give @s
 execute as @a[scores={redeploy_ctd=0}] run scoreboard players set @s redeploy_ctd -1

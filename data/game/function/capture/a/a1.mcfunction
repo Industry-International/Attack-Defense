@@ -1,0 +1,1 @@
+spawn_selector visible A1 attacker

@@ -14,5 +14,13 @@ module team_revive on
 team_revive reset
 sbw_vehicle reset
 sbw_vehicle start
+spawn_selector visible attacker attacker
+spawn_selector visible defender defender
+spawn_selector visible A1 defender
+spawn_selector visible B1 defender
+spawn_selector visible B2 defender
+spawn_selector visible B3 defender
+spawn_selector visible C1 defender
+spawn_selector visible C2 defender
 give @a[team=!spectator,team=!unselected] kubejs:profession_selector
 scoreboard players reset CTD game_start_ctd
