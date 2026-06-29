@@ -11,8 +11,8 @@ clear @a[team=!spectator,team=!unselected]
 kubejsadmin profession @a
 module team on
 module team_revive on
-team_revive reset
-sbw_vehicle redeploy
+sbw_vehicle stop
+sbw_vehicle clear
 sbw_vehicle start
 spawn_selector visible attacker attacker
 spawn_selector visible defender defender
