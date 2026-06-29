@@ -22,5 +22,8 @@ spawn_selector visible B2 defender
 spawn_selector visible B3 defender
 spawn_selector visible C1 defender
 spawn_selector visible C2 defender
+spawn_selector visible atk_ship_1 attacker
+spawn_selector visible atk_ship_2 attacker
+spawn_selector visible def_ship defender
 give @a[team=!spectator,team=!unselected] kubejs:profession_selector
 scoreboard players reset CTD game_start_ctd

@@ -6,3 +6,6 @@ spawn_selector invisible C1
 spawn_selector invisible C2
 spawn_selector invisible attacker
 spawn_selector invisible defender
+spawn_selector invisible atk_ship_1
+spawn_selector invisible atk_ship_2
+spawn_selector invisible def_ship
