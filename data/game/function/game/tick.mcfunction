@@ -1,0 +1,1 @@
+execute if score state game_state matches 1 run function game:game/spa
