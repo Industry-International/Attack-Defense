@@ -1,0 +1,1 @@
+execute as @a[tag=!op] run gamemode adventure
