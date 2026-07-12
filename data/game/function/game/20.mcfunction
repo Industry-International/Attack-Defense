@@ -26,7 +26,7 @@ spawn_selector visible atk_ship_1 attacker
 spawn_selector visible atk_ship_2 attacker
 spawn_selector visible def_ship defender
 module spawn_compass on
-profession storage on
 profession restore @a
+profession storage on
 give @a[team=!spectator,team=!unselected] kubejs:profession_selector
 scoreboard players reset CTD game_start_ctd
